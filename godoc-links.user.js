@@ -41,19 +41,23 @@ function godoc () {
 }
 
 
-// Link the package name in the header to the source repo.
 function pkg_go_dev () {
 	var import_path_el = document.querySelector('.DetailsHeader-breadcrumbCurrent');
-
-	var link_el = document.createElement('a');
-	link_el.textContent = import_path_el.textContent;
-	link_el.href = 'https://' + import_path_el.textContent;
-
 	var parent_el = import_path_el.parentNode;
-	parent_el.removeChild(import_path_el);
-	parent_el.prepend(link_el);
 
+	pkg_go_dev_add_repo_link(parent_el, import_path_el);
 	pkg_go_dev_add_godoc_link(parent_el, import_path_el.textContent);
+}
+
+
+// Link the package name in the header to the source repo.
+function pkg_go_dev_add_repo_link (container_el, import_path_el) {
+	var link_el = document.createElement('a');
+	link_el.href = 'https://' + import_path_el.textContent;
+	link_el.textContent = import_path_el.textContent;
+
+	container_el.removeChild(import_path_el);
+	container_el.prepend(link_el);
 }
 
 
