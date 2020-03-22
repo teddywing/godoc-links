@@ -30,7 +30,7 @@ function github_add_godoc_link () {
 	var github_repo_header_el = document.querySelector('.pagehead.repohead .flex-wrap')
 
 	var container_el = document.createElement('span');
-	container_el.className = 'flex-self-stretch';
+	container_el.className = 'text-small';
 	var link_el = document.createElement('a');
 	link_el.href = '';
 	link_el.textContent = '(GoDoc)';
