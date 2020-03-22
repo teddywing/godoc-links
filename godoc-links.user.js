@@ -43,7 +43,8 @@ function github () {
 
 	for (var i = 0; i < languages.length; i++) {
 		if (languages[i].textContent === 'Go') {
-			console.log('found');
+			github_add_godoc_link();
+
 			break;
 		}
 	}
@@ -56,8 +57,11 @@ function github_add_godoc_link () {
 	var container_el = document.createElement('span');
 	container_el.className = 'text-small';
 	var link_el = document.createElement('a');
-	link_el.href = '';
+	link_el.href = 'https://godoc.org/' + github_package_name();
 	link_el.textContent = '(GoDoc)';
+
+	container_el.appendChild(link_el);
+	github_repo_header_el.appendChild(container_el);
 }
 
 
