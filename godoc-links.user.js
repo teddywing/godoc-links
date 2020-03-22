@@ -12,3 +12,15 @@ function pkg_go_dev () {
 	parent_el.removeChild(import_path_el);
 	parent_el.prepend(link_el);
 }
+
+
+function github () {
+	var languages = document.querySelectorAll('.repository-lang-stats-numbers .lang');
+
+	for (var i = 0; i < languages.length; i++) {
+		if (languages[i].textContent === 'Go') {
+			console.log('found');
+			break;
+		}
+	}
+}
