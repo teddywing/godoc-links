@@ -52,6 +52,18 @@ function pkg_go_dev () {
 	var parent_el = import_path_el.parentNode;
 	parent_el.removeChild(import_path_el);
 	parent_el.prepend(link_el);
+
+	pkg_go_dev_add_godoc_link(parent_el, import_path_el.textContent);
+}
+
+
+// Add a link in the header to the GoDoc version of the docs.
+function pkg_go_dev_add_godoc_link (container_el, import_path) {
+	var link_el = document.createElement('a');
+	link_el.href = 'https://godoc.org/' + import_path;
+	link_el.textContent = '(GoDoc)';
+
+	container_el.appendChild(link_el);
 }
 
 
