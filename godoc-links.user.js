@@ -2,6 +2,7 @@
 // @name GoDoc Links
 // @description Add GoDoc documentation links to relevant pages
 // @namespace com.teddywing
+// @version 0.0.1
 // @match https://godoc.org/*
 // @match https://pkg.go.dev/*
 // @match https://github.com/*
