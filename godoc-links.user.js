@@ -1,3 +1,12 @@
+// ==UserScript==
+// @name GoDoc Links
+// @description Add GoDoc documentation links to relevant pages
+// @namespace com.teddywing
+// @match https://godoc.org/*
+// @match https://pkg.go.dev/*
+// @match https://github.com/*
+// ==/UserScript==
+
 function init () {
 	switch (window.location.hostname) {
 	case 'godoc.org':
