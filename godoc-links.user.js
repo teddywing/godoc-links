@@ -35,3 +35,15 @@ function github_add_godoc_link () {
 	link_el.href = '';
 	link_el.textContent = '(GoDoc)';
 }
+
+
+// Turns:
+//
+//     https://github.com/google/uuid/blob/master/go.mod
+//
+// into:
+//
+//     github.com/google/uuid
+function github_package_name () {
+	return window.location.href.split('/').slice(2, 5).join('/');
+}
