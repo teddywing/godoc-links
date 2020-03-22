@@ -1,4 +1,8 @@
-document.body.innerHTML = document.body.innerHTML.replace(/import "([^"]+)"/, 'import "<a href="https://$1">$1</a>"')
+// Make the 'import "..."' package name a link to the package source.
+function godoc () {
+	document.body.innerHTML = document.body.innerHTML
+		.replace(/import "([^"]+)"/, 'import "<a href="https://$1">$1</a>"');
+}
 
 
 function pkg_go_dev () {
