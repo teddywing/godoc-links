@@ -1,3 +1,14 @@
+function init () {
+	switch (window.location.hostname) {
+	case 'godoc.org':
+		godoc();
+	case 'pkg.go.dev':
+		pkg_go_dev();
+	case 'github.com':
+		github();
+	}
+}
+
 // Make the 'import "..."' package name a link to the package source.
 function godoc () {
 	document.body.innerHTML = document.body.innerHTML
@@ -51,3 +62,6 @@ function github_add_godoc_link () {
 function github_package_name () {
 	return window.location.href.split('/').slice(2, 5).join('/');
 }
+
+
+init();
