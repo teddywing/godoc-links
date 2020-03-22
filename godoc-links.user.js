@@ -25,6 +25,7 @@ function godoc () {
 }
 
 
+// Link the package name in the header to the source repo.
 function pkg_go_dev () {
 	var import_path_el = document.querySelector('.DetailsHeader-breadcrumbCurrent');
 
@@ -51,6 +52,7 @@ function github () {
 }
 
 
+// Add a GoDoc link to the repo name header.
 function github_add_godoc_link () {
 	var github_repo_header_el = document.querySelector('.pagehead.repohead .flex-wrap')
 
